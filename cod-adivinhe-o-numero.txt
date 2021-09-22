@@ -1,0 +1,46 @@
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+using namespace std;
+int main()
+  {
+  srand((unsigned)time(0));
+  int maior = 100;
+  int menor = 1;
+  int aleatorio = rand()%(maior-menor+1) + menor;
+  int pivet[10];
+  int i=0;
+  int select;
+  int tentativa = 0;
+  while(select!=1 && select!=2 && select!=3){
+    cout<<"MENU\n1 - Jogar\n2 - Sair\n3 - Créditos (by Rômulo)\n==>";
+  cin>>select;
+  }
+  if(select==1){ 
+    while(pivet[i]!=aleatorio && tentativa<10){
+    cout<<"Digite um número: ";
+    cin>>pivet[i];
+    tentativa++;
+    if(pivet[i]>aleatorio){
+      cout<<"Chutou alto!"<<endl;
+    } 
+    else if(pivet[i]<aleatorio){
+      cout<<"Chutou baixo!"<<endl;
+    }
+    else if(pivet[i]==aleatorio){
+      cout<<"Acertou! Parabéns"<<endl;
+    } 
+    }
+    if(tentativa>=10){
+      cout<<"Game Over!"<<endl;
+    }
+   cout<<"Quantidade de tentativas: "<<tentativa<<endl;
+   cout<< "Numero Aleatorio = "<<aleatorio<<endl;   
+   }
+  else if (select==2){
+    cout<<"Jogo finalizado"<<endl;
+  }
+  else if(select==3){
+    cout<<"Créditos de realização de aplicação a Rômulo Santos"<<endl;
+  }
+ }
